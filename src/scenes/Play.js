@@ -17,9 +17,19 @@ class Play extends Phaser.Scene {
     }
 
     create() {
-        
+        //music
         this.music = this.sound.add('music');
         
+        var musicConfig = {
+            mute: false,
+            volume: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0,
+        }
+
+        this.music.play(musicConfig);
         
         // place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
@@ -77,6 +87,7 @@ class Play extends Phaser.Scene {
         // 60-second play clock
         scoreConfig.fixedWidth = 0;
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
+            this.music.pause();
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
