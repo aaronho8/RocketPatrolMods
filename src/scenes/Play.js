@@ -2,6 +2,7 @@ class Play extends Phaser.Scene {
     constructor() {
         super("playScene");
     }
+    
 
     preload() {
         // load images/tile sprites
@@ -11,9 +12,34 @@ class Play extends Phaser.Scene {
         
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        
+        //load music
+        this.load.audio('music', './assets/gamemusic.wav');
+    
+    
+    
     }
 
     create() {
+        //music
+        this.music = this.sound.add('music');
+
+        var musicConfig = {
+            mute: false,
+            volume: 1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        }
+
+        this.music.play(musicConfig);
+        
+        
+        
+        
+        
         // place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
