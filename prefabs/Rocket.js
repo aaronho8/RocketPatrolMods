@@ -10,9 +10,9 @@ class Rocket extends Phaser.GameObjects.Sprite {
     update() {
         // left/right movement
         if (!this.isFiring) {
-            if (keyLEFT.isDown && this.x >= 47) {
+            if if(this.game.input.mousePointer.x < this.world.width*0.5) {
                 this.x -= 2;
-            } else if (keyRIGHT.isDown && this.x <= 598) {
+            } else if if(this.game.input.mousePointer.x > this.world.width*0.5) {
                 this.x += 2;
             }
         }
