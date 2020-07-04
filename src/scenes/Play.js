@@ -136,7 +136,7 @@ class Play extends Phaser.Scene {
         }
         if (this.checkCollision(this.p1Rocket, this.specialspaceship)) {
             this.p1Rocket.reset();
-            this.shipExplode(this.specialspaceship);
+            this.specialshipExplode(this.specialspaceship);
         }
     }
 
@@ -170,4 +170,44 @@ class Play extends Phaser.Scene {
         // play sound
         this.sound.play('sfx_explosion');  
     }
+
+
+
+    specialshipExplode(ship) {
+        ship.alpha = 0;                         // temporarily hide ship
+        // create explosion sprite at ship's position
+        let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
+        boom.anims.play('explode');             // play explode animation
+        boom.on('animationcomplete', () => {    // callback after animation completes
+            ship.reset();                       // reset ship position
+            ship.alpha = 1;                     // make ship visible again
+            boom.destroy();                     // remove explosion sprite
+        });
+        
+        // score increment and repaint
+        this.p1Score += ship.points;
+        this.scoreLeft.text = this.p1Score;     
+        
+        // play sound
+        this.sound.play('sfx_explosion');  
+
+        this.sound.play('sfx_explosion2');  
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
