@@ -8,7 +8,7 @@ July 4 2020
  
 Sources:
 New explosion sound: https://www.youtube.com/watch?v=zDq-9b0lqf0
-Background music: ttps://www.youtube.com/watch?v=mRN_T6JkH-c
+Background music: https://www.youtube.com/watch?v=mRN_T6JkH-c
 
 Point breakdown:
 Add your own (copyright-free) background music to the Play scene (10)
