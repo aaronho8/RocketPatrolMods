@@ -1,9 +1,14 @@
 /* 
-Name: Aaron Ho
+Name: 
+Aaron Ho
+aayho
+
+Date: 
+July 4 2020
  
 Sources:
-https://www.youtube.com/watch?v=zDq-9b0lqf0
-https://www.youtube.com/watch?v=mRN_T6JkH-c
+New explosion sound: https://www.youtube.com/watch?v=zDq-9b0lqf0
+Background music: ttps://www.youtube.com/watch?v=mRN_T6JkH-c
 
 Point breakdown:
 Add your own (copyright-free) background music to the Play scene (10)
